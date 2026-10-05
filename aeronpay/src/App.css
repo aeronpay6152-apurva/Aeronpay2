@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+@keyframes logoZoomPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo-zoom-pulse {
+  animation: logoZoomPulse 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center;
+}
+
+@keyframes aeronpayLoaderLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.78);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.15);
+  }
+}
+
+.aeronpay-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(55, 81, 255, 0.18), transparent 34%),
+    linear-gradient(180deg, #040b1f 0%, #070b18 58%, #03050d 100%);
+}
+
+.aeronpay-loader-logo {
+  width: min(300px, 70vw);
+  animation: aeronpayLoaderLogo 1.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glowing animations */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor, inset 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes colorfulGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.8));
+  }
+  25% {
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.8));
+  }
+  75% {
+    filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.8));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.8));
+  }
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 0 15px currentColor);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+    filter: drop-shadow(0 0 25px currentColor);
+  }
+}
+
+@keyframes radiusGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor, inset 0 0 20px rgba(255, 255, 255, 0.15);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.glow-colorful {
+  animation: colorfulGlow 4s ease-in-out infinite;
+}
+
+.glow-float {
+  animation: floatGlow 3s ease-in-out infinite;
+}
+
+.glow-radius {
+  animation: radiusGlow 2.5s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  animation: shimmer 3s linear infinite;
+  background-size: 1000px 100%;
+}
